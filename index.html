@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Whadda ya get when you stick cats to Carlo? Carlocatenation!">
+
+<title>carlocatanate</title>
+
+<link rel="stylesheet" href="css/style.css" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="jquery/jquery-2.1.3.min.js"></script>
+<!-- <script type="text/paperscript" src="javascript/paperscript.js" canvas="canvas"></script> -->
+
+<!--#################### TEACHES OLDER BROWSERS HTML5 ######################## -->
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<!--############################ IE BUG FIX ################################## -->
+<!--[if lt IE 9]>
+<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+<![endif]-->
+
+<!--####################### IMAGE RESIZER SCRIPT ############################# -->
+<!-- The code doesn't work in IE6 or less, so I suggest the following
+conditionally-commented code in your <head> be used to implement the
+JavaScript on your RWD website -->
+<!--[if ! lte IE 6]><!-->
+<script type="text/javascript" src="javascript/imgsizer.js"></script>
+<script type="text/javascript">
+addLoadEvent(function() {
+if (document.getElementById && document.getElementsByTagName) {
+var aImgs =
+document.getElementById("content").getElementsByTagName("img");
+imgSizer.collate(aImgs);
+}
+});
+</script>
+<!--<![endif]-->
+
+<!-- The following script allows all browsers to support media queries in CSS.-->
+<!--[if lt IE 9]>
+<script src="http://css3-mediaqueriesjs.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+<![endif]-->
+</head>
+
+<body>
+
+	<h1>carlo <span class="green">+</span> <span class="strong">cat</span> <span class="orange">+</span> a <span class="purple">+</span> nate <span class="turquoise">+</span> !1!</h1>
+
+	<input type="button" id="btn" class="strong" value="+">
+
+    <div class="wrapper">
+        
+        <div class="carlo">
+            <img src="sources/carlo.png" alt="">
+        
+            <figure class="cat-one">
+                <img src="sources/cat1.png" alt="">
+            </figure>
+
+            <figure class="cat-two">
+                <img src="sources/cat2.png" alt="">
+            </figure>
+
+            <figure class="cat-three">   
+                <img src="sources/cat3.png" alt="">
+            </figure>
+
+            <figure class="cat-four">
+                <img src="sources/cat4.png" alt="">
+            </figure>
+            
+            <figure class="cat-five">
+                <img src="sources/cat5.png" alt="">
+            </figure>
+            
+
+        </div>        
+        
+    </div>
+
+</body>
+
+<script>
+var animations = ["one", "two", "three", "four", "five"];
+var indexPos = -1;
+
+$(function(){
+    $("#btn").on("click", function(){
+	
+	if(indexPos <= 4){
+    	indexPos++;    
+    	$(".cat-" + animations[indexPos]).addClass("animate-" + animations[indexPos]);
+		
+    	if (indexPos == 4){
+    		$("#btn").attr('value', "the end");
+    	}
+
+       } else {
+		   
+		   //$("#btn").attr('value', "the end");
+		   window.location.reload();
+		 }
+    });   
+});
+
+</script>
+
+</html>
